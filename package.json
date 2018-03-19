@@ -1,0 +1,35 @@
+{
+  "name": "javascript-advanced-example",
+  "version": "0.0.1",
+  "description": "How to use GraphStack with JavaScript - advanced example",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "author": {
+    "name": "Umed Khudoiberdiev",
+    "email": "pleerock.me@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/graphframework/javascript-advanced-example.git"
+  },
+  "bugs": {
+    "url": "https://github.com/graphframework/javascript-advanced-example/issues"
+  },
+  "tags": [
+    "graphstack",
+    "graphstack-javascript-example"
+  ],
+  "dependencies": {
+    "graphstack": "0.0.7",
+    "sqlite3": "^4.0.0"
+  },
+  "scripts": {
+    "compile": "npx babel src --out-dir dist --copy-files --source-maps --presets=babel-preset-env",
+    "start": "npm run compile && node ./dist/index.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}
