@@ -29,7 +29,7 @@ export class PostController {
     }
 
     async postSave(args) {
-        const post = args.id ? await this.entityManager.findOne(args.id) : {};
+        const post = args.id ? await this.entityManager.findOneOrFail(Post, args.id) : {};
         post.title = args.title;
         post.text = args.text ? args.text : this.textGenerator.generate();
         if (args.categoryIds)
@@ -39,7 +39,7 @@ export class PostController {
     }
 
     async postDelete({ id }) {
-        await this.entityManager.remove({ id: id });
+        await this.entityManager.remove(Post, { id: id });
         return true;
     }
 
