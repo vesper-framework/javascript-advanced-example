@@ -1,7 +1,7 @@
 {
   "name": "javascript-advanced-example",
   "version": "0.0.1",
-  "description": "How to use GraphStack with JavaScript - advanced example",
+  "description": "How to use Vesper Framework with JavaScript - advanced example",
   "license": "MIT",
   "readmeFilename": "README.md",
   "author": {
@@ -10,17 +10,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/graphframework/javascript-advanced-example.git"
+    "url": "https://github.com/vesper-framework/javascript-advanced-example.git"
   },
   "bugs": {
-    "url": "https://github.com/graphframework/javascript-advanced-example/issues"
+    "url": "https://github.com/vesper-framework/javascript-advanced-example/issues"
   },
   "tags": [
-    "graphstack",
-    "graphstack-javascript-example"
+    "vesper",
+    "vesper-javascript-example"
   ],
   "dependencies": {
-    "graphstack": "0.0.7",
+    "vesper": "0.1.0",
     "sqlite3": "^4.0.0"
   },
   "scripts": {

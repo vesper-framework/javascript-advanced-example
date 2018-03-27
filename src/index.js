@@ -1,5 +1,5 @@
 import "babel-polyfill";
-import {bootstrap} from "graphstack";
+import {bootstrap} from "vesper";
 import {CategoryController} from "./controller/CategoryController";
 import {PostController} from "./controller/PostController";
 import {PostResolver} from "./resolver/PostResolver";
@@ -29,7 +29,7 @@ bootstrap({
     schemas: [__dirname + "/schema/**/*.graphql"]
 }).then(() => {
     console.log("Your app is up and running on http://localhost:3000 " +
-        "You can use GraphiQL in development mode on http://localhost:3000/playground");
+        "You can use Playground in development mode on http://localhost:3000/playground");
 }).catch(error => {
     console.error(error.stack ? error.stack : error);
 });
