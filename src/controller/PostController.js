@@ -1,5 +1,6 @@
 import {EntityManager} from "typeorm";
 import {Post} from "../entity/Post";
+import {Category} from "../entity/Category";
 import {TextGenerator} from "../service/TextGenerator";
 
 export class PostController {
@@ -32,8 +33,11 @@ export class PostController {
         const post = args.id ? await this.entityManager.findOneOrFail(Post, args.id) : {};
         post.title = args.title;
         post.text = args.text ? args.text : this.textGenerator.generate();
-        if (args.categoryIds)
-            post.categories = args.categoryIds.map(categoryId => ({ id: categoryId }));
+        if (args.categoryIds) {
+            post.categories = await Promise.all(args.categoryIds.map(categoryId => {
+                return this.entityManager.findOneOrFail(Category, categoryId);
+            }));
+        }
 
         return this.entityManager.save(Post, post);
     }
